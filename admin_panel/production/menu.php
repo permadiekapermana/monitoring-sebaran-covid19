@@ -291,5 +291,131 @@ function harusAngka(evt){
  
  
 </script>
+<!-- Page specific script -->
+<script>
+  $(function () {
+    /* ChartJS
+     * -------
+     * Here we will create a few charts using ChartJS
+     */
+
+    //--------------
+    //- AREA CHART -
+    //--------------
+
+    // Get context with jQuery - using jQuery's .get() method.
+    var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
+
+    var areaChartData = {
+      <?php
+      $positif  = mysql_query("SELECT tgl_input FROM pasien INNER JOIN status ON pasien.id_status=status.id_status WHERE status='Positif' GROUP BY tgl_input ORDER BY tgl_input");
+      $positif2  = mysql_query("SELECT COUNT(tgl_input) as tgl_input FROM pasien INNER JOIN status ON pasien.id_status=status.id_status WHERE status='Positif' GROUP BY tgl_input ORDER BY tgl_input DESC");
+      ?>
+      labels  : [<?php while ($p = mysql_fetch_array($positif)) { echo '"' . $p['tgl_input'] . '",';}?>],
+      datasets: [
+        {
+          label               : 'Digital Goods',
+          backgroundColor     : 'rgba(60,141,188,0.9)',
+          borderColor         : 'rgba(60,141,188,0.8)',
+          pointRadius          : false,
+          pointColor          : '#3b8bba',
+          pointStrokeColor    : 'rgba(60,141,188,1)',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : [<?php while ($p2 = mysql_fetch_array($positif2)) { echo '"' . $p2['tgl_input'] . '",';}?>]
+        }
+      ]
+    }
+
+    var areaChartOptions = {
+      maintainAspectRatio : false,
+      responsive : true,
+      legend: {
+        display: false
+      },
+      scales: {
+        xAxes: [{
+          gridLines : {
+            display : false,
+          }
+        }],
+        yAxes: [{
+          gridLines : {
+            display : false,
+          }
+        }]
+      }
+    }
+
+    // This will get the first returned node in the jQuery collection.
+    var areaChart       = new Chart(areaChartCanvas, {
+      type: 'line',
+      data: areaChartData,
+      options: areaChartOptions
+    })
+
+    //-------------
+    //- DONUT CHART -
+    //-------------
+    // Get context with jQuery - using jQuery's .get() method.
+    var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
+    var donutData        = {
+      labels: [
+          '< 17 Tahun',
+          '17 - 40 Tahun',
+          '> 40 Tahun',
+      ],
+      datasets: [
+        {
+          data: [700,500,400],
+          backgroundColor : ['#f56954', '#00a65a', '#f39c12'],
+        }
+      ]
+    }
+    var donutOptions     = {
+      maintainAspectRatio : false,
+      responsive : true,
+    }
+    //Create pie or douhnut chart
+    // You can switch between pie and douhnut using the method below.
+    var donutChart = new Chart(donutChartCanvas, {
+      type: 'doughnut',
+      data: donutData,
+      options: donutOptions
+    })
+
+    //-------------
+    //- PIE CHART -
+    //-------------
+    // Get context with jQuery - using jQuery's .get() method.
+    var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+    var pieData        = {
+      labels: [
+          'Sembuh',
+          '17 - 40 Tahun',
+          '> 40 Tahun',
+      ],
+      datasets: [
+        {
+          data: [1,2,3],
+          backgroundColor : ['#f56954', '#00a65a', '#f39c12'],
+        }
+      ]
+    }
+    var pieOptions     = {
+      maintainAspectRatio : false,
+      responsive : true,
+    }
+    //Create pie or douhnut chart
+    // You can switch between pie and douhnut using the method below.
+    var pieChart = new Chart(pieChartCanvas, {
+      type: 'pie',
+      data: pieData,
+      options: pieOptions
+    })
+
+    
+  })
+</script>
 </body>
 </html>
