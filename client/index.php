@@ -42,11 +42,11 @@
             <a class="nav-link" href="#perawatan">Perawatan</a>
         </li>
         <li class="nav-item align-self-center"></li>
-            <button class="btn btn-outline-secondary ml-4 align-self-center">Sign In</button>            
+        <a href="../admin_panel"><button class="btn btn-outline-success ml-4 align-self-center">Sign In</button></a>
         </li>
-        <li class="nav-item align-self-center"></li>
+        <!-- <li class="nav-item align-self-center"></li>
             <button class="btn btn-primary2 ml-2 align-self-center">Sign Up</button>
-        </li>
+        </li> -->
         </ul>        
     </div>    
     </div>
