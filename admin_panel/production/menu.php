@@ -360,14 +360,22 @@ function harusAngka(evt){
     // Get context with jQuery - using jQuery's .get() method.
     var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
     var donutData        = {
-      labels: [
+      labels: [        
           '< 17 Tahun',
           '17 - 40 Tahun',
           '> 40 Tahun',
       ],
       datasets: [
         {
-          data: [700,500,400],
+        <?php
+        $bawah17  = mysql_query("SELECT COUNT(usia) as umur FROM pasien INNER JOIN status ON pasien.id_status=status.id_status WHERE status='Positif' AND usia<17");
+        $one = mysql_fetch_array($bawah17);
+        $empatpuluh  = mysql_query("SELECT COUNT(usia) as umur FROM pasien INNER JOIN status ON pasien.id_status=status.id_status WHERE status='Positif' AND usia BETWEEN 17 AND 40");
+        $two = mysql_fetch_array($empatpuluh);
+        $lebihempatpuluh  = mysql_query("SELECT COUNT(usia) as umur FROM pasien INNER JOIN status ON pasien.id_status=status.id_status WHERE status='Positif' AND usia>40");
+        $three = mysql_fetch_array($lebihempatpuluh);
+        ?>
+          data: [<?php echo "$one[umur]"; ?>,<?php echo "$two[umur]"; ?>,<?php echo "$three[umur]"; ?>],
           backgroundColor : ['#f56954', '#00a65a', '#f39c12'],
         }
       ]
@@ -391,14 +399,25 @@ function harusAngka(evt){
     var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
     var pieData        = {
       labels: [
+          'Meninggal',
           'Sembuh',
-          '17 - 40 Tahun',
-          '> 40 Tahun',
+          'Positif',
+          'Dirawat',
       ],
       datasets: [
         {
-          data: [1,2,3],
-          backgroundColor : ['#f56954', '#00a65a', '#f39c12'],
+        <?php
+        $one  = mysql_query("SELECT COUNT(id_pasien) as id FROM pasien INNER JOIN status ON pasien.id_status=status.id_status WHERE status='Meninggal'");
+        $o = mysql_fetch_array($one);
+        $two  = mysql_query("SELECT COUNT(id_pasien) as id FROM pasien INNER JOIN status ON pasien.id_status=status.id_status WHERE status='Sembuh'");
+        $t = mysql_fetch_array($two);
+        $tri  = mysql_query("SELECT COUNT(id_pasien) as id FROM pasien INNER JOIN status ON pasien.id_status=status.id_status WHERE status='Positif'");
+        $tr = mysql_fetch_array($tri);
+        $four  = mysql_query("SELECT COUNT(id_pasien) as id FROM pasien INNER JOIN status ON pasien.id_status=status.id_status WHERE status='Dirawat'");
+        $f = mysql_fetch_array($four);
+        ?>
+          data: [<?php echo "$o[id]"; ?>,<?php echo "$t[id]"; ?>,<?php echo "$tr[id]"; ?>,<?php echo "$f[id]"; ?>],
+          backgroundColor : ['#f56954', '#00a65a', '#f39c12', 'blue'],
         }
       ]
     }
