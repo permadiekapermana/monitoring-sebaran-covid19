@@ -30,7 +30,7 @@
             <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item align-self-center">
-            <a class="nav-link" href="#chart">Chart</a>
+            <a class="nav-link" href="#chart">Monitoring</a>
         </li>
         <li class="nav-item align-self-center">
             <a class="nav-link" href="#gejala">Gejala</a>
@@ -72,7 +72,26 @@
         <div class="container">
             <div class="row">
                 <div class="col align-self-center"> 
-                    <h1 class="mb-4"><u>Chart</u></h1>
+                    <?php 
+                        include '../admin_panel/config/koneksi.php';
+
+                        $positif2 = mysql_query("SELECT COUNT(id_pasien) as total, tgl_input FROM pasien INNER JOIN status ON pasien.id_status=status.id_status WHERE status='Positif'");
+                        $p2 = mysql_fetch_array($positif2);
+                        $rawat2 = mysql_query("SELECT COUNT(id_pasien) as total, tgl_input FROM pasien INNER JOIN status ON pasien.id_status=status.id_status WHERE status='Dirawat'");
+                        $r2 = mysql_fetch_array($rawat2);
+                        $sembuh2 = mysql_query("SELECT COUNT(id_pasien) as total, tgl_input FROM pasien INNER JOIN status ON pasien.id_status=status.id_status WHERE status='Sembuh'");
+                        $s2 = mysql_fetch_array($sembuh2);
+                        $meninggal2 = mysql_query("SELECT COUNT(id_pasien) as total, tgl_input FROM pasien INNER JOIN status ON pasien.id_status=status.id_status WHERE status='Meninggal'");
+                        $m2 = mysql_fetch_array($meninggal2);
+                        $total2 = mysql_query("SELECT COUNT(id_pasien) as total, tgl_input FROM pasien INNER JOIN status ON pasien.id_status=status.id_status WHERE status='Positif' OR status='Dirawat' OR status='Sembuh' OR status='Meninggal'");
+                        $t2 = mysql_fetch_array($total2);
+                    ?>
+                    <h1 class="mb-4"><u>Monitoring Kasus</u></h1>
+                    <p>Jumlah Pasien Positif : <?php echo"$p2[total]"; ?></p>
+                    <p>Jumlah Pasien Dirawat : <?php echo"$r2[total]"; ?></p>
+                    <p>Jumlah Pasien Sembuh : <?php echo"$s2[total]"; ?></p>
+                    <p>Jumlah Pasien Meninggal : <?php echo"$m2[total]"; ?></p>
+                    <p>Total Keseluruhan : <?php echo"$t2[total]"; ?></p>
                 </div>
             </div>            
         </div>
