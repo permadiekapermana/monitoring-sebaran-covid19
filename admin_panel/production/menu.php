@@ -267,7 +267,7 @@
   $(function () {
     $("#example1").DataTable({
       "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["colvis"]
+      "buttons": ["pdf", "excel", "colvis"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     $('#example2').DataTable({
       "paging": true,
@@ -279,6 +279,17 @@
       "responsive": true,
     });
   });
+</script>
+<script>
+ 
+function harusAngka(evt){
+ var charCode = (evt.which) ? evt.which : event.keyCode
+ if ((charCode < 48 || charCode > 57)&&charCode>32)
+ return false;
+ return true;
+}
+ 
+ 
 </script>
 </body>
 </html>

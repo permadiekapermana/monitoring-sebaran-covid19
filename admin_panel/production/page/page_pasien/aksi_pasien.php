@@ -1,54 +1,43 @@
 <?php
 
+error_reporting(0);
+
 include "../../../config/koneksi.php";
 
 $page=$_GET[page];
 $act=$_GET[act];
 
 
-if ($page=='Users' AND $act=='input'){
+if ($page=='Pasien' AND $act=='input'){
 
-$username     = $_POST['username'];
-$password     = sha1($_POST['password']);
-$nama         = $_POST['nama'];
-$level        = $_POST['level'];
+$id_pasien     = $_POST['id_pasien'];
+$id_jk         = $_POST['id_jk'];
+$id_status     = $_POST['id_status'];
+$tgl_input     = $_POST['tgl_input'];
+$usia          = $_POST['usia'];
 
-$query=mysql_query("INSERT INTO users (username, password, nama, level) VALUES ('$username', '$password', '$nama', '$level')"); 
+mysql_query("INSERT INTO pasien (id_pasien, id_jk, id_status, tgl_input, usia) VALUES ('$id_pasien', '$id_jk', '$id_status', '$tgl_input', '$usia')");
 header('location:../../menu.php?page='.$page);
 
 }
   
 
-elseif ($page=='Users' AND $act=='update'){
-  if (empty($_POST[password]) ){   
+elseif ($page=='Pasien' AND $act=='update'){
 
-  $id_user      = $_POST['id_user'];
-  $username     = $_POST['username'];
-  $nama         = $_POST['nama'];
-  $level        = $_POST['level'];
+  $id_pasien     = $_POST['id_pasien'];
+  $id_jk         = $_POST['id_jk'];
+  $id_status     = $_POST['id_status'];
+  $tgl_input     = $_POST['tgl_input'];
+  $usia          = $_POST['usia'];
   
-  $query=mysql_query("UPDATE Users SET username='$username', nama='$nama', level='$level' WHERE id_user='$id_user'"); 							 
+  $query=mysql_query("UPDATE pasien SET id_jk='$id_jk', id_status='$id_status', tgl_input='$tgl_input', usia='$usia' WHERE id_pasien='$id_pasien'"); 							 
   header('location:../../menu.php?page='.$page);
-
-  }
-  else {
-
-  $id_user      = $_POST['id_user'];
-  $username     = $_POST['username'];
-  $password     = sha1($_POST['password']);
-  $nama         = $_POST['nama'];
-  $level        = $_POST['level'];
-  
-  $query=mysql_query("UPDATE Users SET username='$username', password='$password', nama='$nama', level='$level' WHERE id_user='$id_user'"); 							 
-  header('location:../../menu.php?page='.$page);
-
-  }
 
 }
 
-elseif ($page=='Users' AND $act=='delete'){
+elseif ($page=='Pasien' AND $act=='delete'){
 
-mysql_query("DELETE FROM users WHERE id_user='$_GET[id]'");
+mysql_query("DELETE FROM pasien WHERE id_pasien='$_GET[id]'");
 header('location:../../menu.php?page='.$page);
 
 }
