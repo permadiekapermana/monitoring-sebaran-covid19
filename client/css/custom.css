@@ -1,5 +1,5 @@
 .btn-primary {
-    background: #FF9900;
+    background: #276D0B;
     border: 0;
     padding: 15px 40px 15px 40px;
     font-size: 16px;
@@ -7,30 +7,43 @@
 }
 
 .btn-primary:hover {
-    background: rgb(219, 133, 4);
+    background: #0c2702;
     border: 0;
 }
 
 .btn-primary2 {
-    background: #FF9900;
+    background: #276D0B;
     border: 0;
     font-size: 17px;
     color: white;
 }
 
 .btn-primary2:hover {
-    background: rgb(219, 133, 4);
+    background: #0c2702;
     border: 0;
 }
 
-.herobwa h1 {
+.hero h1 {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
 }
 
-.herobwa p {
+.hero p {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
+}
+.hero ul li {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+.footer{
+    background-color: #276D0B;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
 }
 
 @media (min-width: 576px) { ... }
