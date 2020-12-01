@@ -50,7 +50,8 @@ default:
               </form>
               </div>
               <h3 class="card-title"><a href="?page=Pasien&act=tambah"><button type="button" class="btn btn-round btn-primary mr-2"><i class="fa fa-plus"></i> Tambah Data</button></a></h3>
-              <!-- <h3 class="card-title"><a href="?page=Pasien&act=tambah"><button type="button" class="btn btn-round btn-danger mr-2"><i class="fa fa-plus"></i> Export PDF</button></a></h3> <h3 class="card-title"><a href="?page=Pasien&act=tambah"><button type="button" class="btn btn-round btn-success"><i class="fa fa-plus"></i> Export Excel</button></a></h3> -->
+              <h3 class="card-title"><a href="page/page_pasien/cetak.php" target="_blank"><button type="button" class="btn btn-round btn-danger mr-2"><i class="fa fa-plus"></i> Export PDF</button></a></h3>
+              <!-- <h3 class="card-title"><a href="?page=Pasien&act=tambah"><button type="button" class="btn btn-round btn-success"><i class="fa fa-plus"></i> Export Excel</button></a></h3> -->
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
@@ -151,7 +152,8 @@ case "search":
               </form>
               </div>
               <h3 class="card-title"><a href="?page=Pasien&act=tambah"><button type="button" class="btn btn-round btn-primary mr-2"><i class="fa fa-plus"></i> Tambah Data</button></a></h3>
-              <!-- <h3 class="card-title"><a href="?page=Pasien&act=tambah"><button type="button" class="btn btn-round btn-danger mr-2"><i class="fa fa-plus"></i> Export PDF</button></a></h3> <h3 class="card-title"><a href="?page=Pasien&act=tambah"><button type="button" class="btn btn-round btn-success"><i class="fa fa-plus"></i> Export Excel</button></a></h3> -->
+              <h3 class="card-title"><a href="page/page_pasien/cetak.php" target="_blank"><button type="button" class="btn btn-round btn-danger mr-2"><i class="fa fa-plus"></i> Export PDF</button></a></h3>
+              <!-- <h3 class="card-title"><a href="?page=Pasien&act=tambah"><button type="button" class="btn btn-round btn-success"><i class="fa fa-plus"></i> Export Excel</button></a></h3> -->
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
