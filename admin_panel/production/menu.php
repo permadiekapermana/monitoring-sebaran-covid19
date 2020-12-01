@@ -23,6 +23,10 @@
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
   <!-- Favicon -->
   <link rel="shortcut icon" href="../../client/images/covid-logo.png">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -104,7 +108,7 @@
           <li class="nav-header">KELOLA ADMIN</li>
           
           <li class="nav-item">
-            <a href="../pages/gallery.html" class="nav-link">
+            <a href="?page=Users" class="nav-link">
               <i class="nav-icon far fa-user"></i>
               <p>
                 Users
@@ -114,7 +118,7 @@
           <li class="nav-header">DATA MASTER</li>
           
           <li class="nav-item">
-            <a href="../pages/gallery.html" class="nav-link">
+            <a href="?page=JenisKelamin" class="nav-link">
               <i class="nav-icon far fa-plus-square"></i>
               <p>
                 Jenis Kelamin
@@ -122,7 +126,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../pages/gallery.html" class="nav-link">
+            <a href="?page=Status" class="nav-link">
               <i class="nav-icon far fa-plus-square"></i>
               <p>
                 Status Pasien
@@ -132,7 +136,7 @@
           <li class="nav-header">DATA PASIEN</li>
           
           <li class="nav-item">
-            <a href="../pages/gallery.html" class="nav-link">
+            <a href="?page=Pasien" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
                 Data Pasien
@@ -152,7 +156,7 @@
           <li class="nav-header">DATA MASTER</li>
           
           <li class="nav-item">
-            <a href="../pages/gallery.html" class="nav-link">
+            <a href="?page=JenisKelamin" class="nav-link">
               <i class="nav-icon far fa-plus-square"></i>
               <p>
                 Jenis Kelamin
@@ -160,7 +164,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../pages/gallery.html" class="nav-link">
+            <a href="?page=Status" class="nav-link">
               <i class="nav-icon far fa-plus-square"></i>
               <p>
                 Status Pasien
@@ -170,7 +174,7 @@
           <li class="nav-header">DATA PASIEN</li>
           
           <li class="nav-item">
-            <a href="../pages/gallery.html" class="nav-link">
+            <a href="?page=Pasien" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
                 Data Pasien
@@ -245,5 +249,36 @@
 <script src="../dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="../dist/js/pages/dashboard2.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="../plugins/jszip/jszip.min.js"></script>
+<script src="../plugins/pdfmake/pdfmake.min.js"></script>
+<script src="../plugins/pdfmake/vfs_fonts.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- Page specific script -->
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
 </body>
 </html>
