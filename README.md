@@ -30,3 +30,9 @@ Versi PHP yang digunakan dalam pengembangan sistem adalah PHP versi 5.6, akan op
    a. Buka browser
    b. Ketikkan localhost/monitoring_covid19
    c. Program telah dapat digunakan
+
+5) Login
+   a. Pada menu navbar client, klik button Login
+   b. Terdapat 2 aktor yakni Superadmin dan Admin
+   c. Superadmin dapat login dengan menggunakan username/password : 1. permadi/permadi 2. yuda/yuda 3. selly/selly
+   d. Admin dapat login dengan menggunakan username/password : endah/endah
