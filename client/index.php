@@ -87,11 +87,41 @@
                         $t2 = mysql_fetch_array($total2);
                     ?>
                     <h1 class="mb-4"><u>Monitoring Kasus</u></h1>
-                    <p>Jumlah Pasien Positif : <?php echo"$p2[total]"; ?></p>
-                    <p>Jumlah Pasien Dirawat : <?php echo"$r2[total]"; ?></p>
-                    <p>Jumlah Pasien Sembuh : <?php echo"$s2[total]"; ?></p>
-                    <p>Jumlah Pasien Meninggal : <?php echo"$m2[total]"; ?></p>
-                    <p>Total Keseluruhan : <?php echo"$t2[total]"; ?></p>
+                    <table class="table table-borderless">
+                        <tr>
+                            <td width="250px">Jumlah Pasien Positif</td>
+                            <td width="10px">:</td>
+                            <td width="30px" class="text-right"><?php echo"$p2[total]"; ?></td>
+                            <td>Orang</td>
+                        </tr>
+                        <tr>
+                            <td>Jumlah Pasien Dirawat</td>
+                            <td>:</td>
+                            <td><?php echo"$r2[total]"; ?></td>
+                            <td>Orang</td>
+                        </tr>
+                        <tr>
+                            <td>Jumlah Pasien Sembuh</td>
+                            <td>:</td>
+                            <td><?php echo"$s2[total]"; ?></td>
+                            <td>Orang</td>
+                        </tr>
+                        <tr>
+                            <td>Jumlah Pasien Meninggal</td>
+                            <td>:</td>
+                            <td><?php echo"$m2[total]"; ?></td>
+                            <td>Orang</td>
+                        </tr>
+                        <tr>
+                            <td>Total Keseluruhan</td>
+                            <td>:</td>
+                            <td><?php echo"$t2[total]"; ?></td>
+                            <td>Orang</td>
+                        </tr>
+                        <tr>
+                            <td>Per-tanggal : <strong><?php $date = date('Y-m-d'); echo"$date"; ?></strong></td>
+                        </tr>
+                    </table>
                 </div>
             </div>            
         </div>
