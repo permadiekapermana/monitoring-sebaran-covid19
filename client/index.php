@@ -142,7 +142,7 @@
                     Rata-rata gejala akan muncul 5–6 hari setelah seseorang pertama kali terinfeksi virus ini, tetapi bisa juga 14 hari setelah terinfeksi.</p>
                 </div>
                 <div class="col align-self-center d-none d-sm-block">
-                <img src="images/analyst.jpg" alt="" width="600">
+                <img src="images/gejala.webp" alt="" width="600">
                 </div>
             </div>
         </div>
@@ -177,7 +177,7 @@
                     </p>
                 </div>
                 <div class="col align-self-center d-none d-sm-block">
-                <img src="images/analyst.jpg" alt="" width="600">
+                <img src="images/pencegahan.png" alt="" width="600">
                 </div>
             </div>
         </div>
@@ -197,7 +197,7 @@
                     <p>Merasa sedih, stres, atau bingung selama krisis merupakan hal yang normal. Berbicara dengan orang yang Anda percaya, seperti teman dan keluarga, dapat membantu. Jika Anda merasa kewalahan, hubungi tenaga kesehatan atau konselor.</p>
                 </div>
                 <div class="col align-self-center d-none d-sm-block">
-                <img src="images/analyst.jpg" alt="" width="600">
+                <img src="images/perawatan.png" alt="" width="600">
                 </div>
             </div>
         </div>
